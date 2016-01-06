@@ -1,0 +1,44 @@
+{
+    "name": "greyexpert/json-api",
+    "description": "jsonapi.org implementation",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Sergey Kambalin",
+            "email": "greyexpert@gmail.com"
+        }
+    ],
+
+    "version": "1.0.0-dev",
+    "minimum-stability": "stable",
+
+    "require": {
+        "zendframework/zend-diactoros": "^1.3",
+        "shrikeh/teapot": "^1.0",
+        "pavelsterba/http-exceptions": "^1.1",
+        "relay/relay": "^1.1"
+    },
+
+    "require-dev": {
+        "phpunit/phpunit": "^5.1"
+    },
+
+    "scripts": {
+        "test": "composer ptest",
+        "ptest": "php ./vendor/bin/phpunit",
+        "sample": "php -S localhost:8000 -t ./sample"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Greyexpert\\JsonApi\\": "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "Greyexpert\\JsonApi\\Tests\\": "tests/",
+            "Greyexpert\\JsonApi\\Sample\\": "sample/"
+        }
+    }
+}
