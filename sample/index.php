@@ -2,13 +2,14 @@
 
 require_once '../vendor/autoload.php';
 
-use Psr\Http\Message\RequestInterface as Request;
-use Psr\Http\Message\ResponseInterface as Response;
-
 use Relay\RelayBuilder;
+use Zend\Diactoros\ServerRequestFactory;
+use Zend\Diactoros\Response;
 
-$request = Zend\Diactoros\ServerRequestFactory::fromGlobals();
-$response = new Zend\Diactoros\Response();
+
+
+$request = ServerRequestFactory::fromGlobals();
+$response = new Response();
 
 $queue = array();
 
